@@ -1,0 +1,56 @@
+<div class="accounts view">
+<h2><?php  __('Account');?></h2>
+<dl><?php $i = 0; $class = ' class="altrow"';?>
+<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+<?php echo $account['Account']['id']; ?>
+&nbsp;
+</dd>
+<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Login'); ?></dt>
+<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+<?php echo $account['Account']['login']; ?>
+&nbsp;
+</dd>
+<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Hashed Password'); ?></dt>
+<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+<?php echo $account['Account']['hashed_password']; ?>
+&nbsp;
+</dd>
+<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Status'); ?></dt>
+<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+<?php echo $account['Account']['status']; ?>
+&nbsp;
+</dd>
+<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Role'); ?></dt>
+<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+<?php echo $account['Account']['role']; ?>
+&nbsp;
+</dd>
+<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Nicename'); ?></dt>
+<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+<?php echo $account['Account']['nicename']; ?>
+&nbsp;
+</dd>
+<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created At'); ?></dt>
+<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+<?php echo $account['Account']['created_at']; ?>
+&nbsp;
+</dd>
+<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Updated At'); ?></dt>
+<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+<?php echo $account['Account']['updated_at']; ?>
+&nbsp;
+</dd>
+<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Display Name'); ?></dt>
+<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+<?php echo $account['Account']['display_name']; ?>
+&nbsp;
+</dd>
+</dl>
+</div>
+<div class="actions">
+<ul>
+<li><?php echo $html->link(sprintf(__('Edit %s', true), __('Account', true)), array('action' => 'edit', $account['Account']['id'])); ?> </li>
+<li><?php echo $html->link(sprintf(__('List %s', true), __('Accounts', true)), array('action' => 'index')); ?> </li>
+</ul>
+</div>

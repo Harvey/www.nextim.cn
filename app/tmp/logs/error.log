@@ -1,0 +1,146 @@
+2010-01-22 12:09:17 Warning: Warning (2): link() [<a href='http://php.net/function.link'>function.link</a>]: No error in [APP\views\layouts\default.ctp, line 9]
+2010-01-22 13:31:09 Warning: Warning (512): Method HtmlHelper::javascript does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2010-01-22 13:46:02 Warning: Warning (2): fopen(D:\xampp\htdocs\app\tmp\cache\persistent\cake_core_core_paths) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Invalid argument in [CORE\cake\libs\file.php, line 156]
+2010-01-22 15:28:24 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Session object destruction failed in [CORE\cake\libs\session.php, line 600]
+2010-01-22 15:28:24 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Session object destruction failed in [CORE\cake\libs\session.php, line 600]
+2010-01-22 15:28:24 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Session object destruction failed in [CORE\cake\libs\session.php, line 600]
+2010-01-22 15:28:49 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Session object destruction failed in [CORE\cake\libs\session.php, line 600]
+2010-01-22 15:28:49 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Session object destruction failed in [CORE\cake\libs\session.php, line 600]
+2010-01-22 15:31:07 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Session object destruction failed in [CORE\cake\libs\session.php, line 600]
+2010-01-22 15:31:07 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Session object destruction failed in [CORE\cake\libs\session.php, line 600]
+2010-01-22 15:31:07 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Session object destruction failed in [CORE\cake\libs\session.php, line 600]
+2010-01-22 17:16:58 Warning: Warning (2): fopen(D:\xampp\htdocs\app\tmp\cache\persistent\cake_core_dir_map) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Invalid argument in [CORE\cake\libs\file.php, line 156]
+2010-01-23 15:13:39 Warning: Warning (2): explode() expects parameter 2 to be string, array given in [APP\views\layouts\Content\NavigationBar.php, line 23]
+2010-01-23 15:14:42 Warning: Warning (2): explode() expects parameter 2 to be string, array given in [APP\views\layouts\Content\NavigationBar.php, line 23]
+2010-01-23 16:49:47 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 16:52:41 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 16:59:38 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 17:03:55 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 17:09:44 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:00:15 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:22:58 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:31:11 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:40:15 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:44:16 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:46:09 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:46:55 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:49:36 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:51:46 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:53:25 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:53:48 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:54:32 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 20:58:34 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 21:03:31 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 21:03:43 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 21:03:56 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 21:05:03 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 21:08:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 21:12:38 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 21:14:39 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 21:16:36 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\app\controllers\accounts_controller.php:1) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-23 22:14:48 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2441 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:16:47 Warning: Warning (2): explode() expects parameter 2 to be string, array given in [APP\views\layouts\content\NavigationBar.php, line 23]
+2010-01-23 22:17:11 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2441 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:42:31 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2451 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:48:33 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2451 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:49:00 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2451 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:51:05 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2451 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:51:27 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2451 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:51:56 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2451 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:51:58 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2451 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:52:00 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2451 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:56:35 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2441 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:58:00 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2441 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 22:58:08 Warning: Warning (2): explode() expects parameter 2 to be string, array given in [APP\views\layouts\content\NavigationBar.php, line 23]
+2010-01-23 23:05:25 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2441 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 23:05:31 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2441 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-23 23:05:55 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: 2441 in [CORE\cake\libs\controller\components\acl.php, line 239]
+2010-01-24 12:05:07 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 12:08:16 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 12:24:00 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 12:27:23 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1062: Duplicate entry '' for key 'user_login'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-24 12:29:18 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1062: Duplicate entry '' for key 'user_login'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-24 12:32:10 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1062: Duplicate entry '' for key 'user_login'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-24 12:42:27 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 12:42:55 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 20:43:27 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 20:49:32 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 20:57:40 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 20:58:22 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 21:00:14 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 21:04:26 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 21:21:32 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Site.id' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-24 21:21:32 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 21:23:56 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Site.id' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-24 21:23:56 Warning: Warning (2): Invalid argument supplied for foreach() in [APP\views\sites\index.ctp, line 18]
+2010-01-24 22:23:03 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Site.id' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-24 22:23:03 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 22:39:32 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Site.id' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-24 22:39:33 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-24 22:41:08 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1062: Duplicate entry '' for key 'PRIMARY'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-24 22:41:08 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Site.id' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-24 22:41:08 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 09:11:40 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Site.id' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-25 09:11:40 Warning: Warning (2): Invalid argument supplied for foreach() in [APP\views\sites\index.ctp, line 18]
+2010-01-25 09:13:31 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Site.id' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-25 09:13:31 Warning: Warning (2): Invalid argument supplied for foreach() in [APP\views\sites\index.ctp, line 18]
+2010-01-25 09:14:31 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Site.id' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-25 09:14:31 Warning: Warning (2): Invalid argument supplied for foreach() in [APP\views\sites\index.ctp, line 18]
+2010-01-25 09:28:16 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Site.id' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2010-01-25 09:28:16 Warning: Warning (2): Invalid argument supplied for foreach() in [APP\views\sites\index.ctp, line 18]
+2010-01-25 09:46:48 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 10:07:17 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 10:09:10 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 10:14:19 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 10:14:42 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 10:16:52 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 10:17:04 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 10:17:13 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 10:18:19 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 12:16:32 Warning: Warning (2): htmlentities() [<a href='http://php.net/function.htmlentities'>function.htmlentities</a>]: charset `w' not supported, assuming iso-8859-1 in [CORE\cake\libs\view\helpers\html.php, line 295]
+2010-01-25 12:19:41 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 12:19:56 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 12:20:02 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 12:20:40 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 14:20:33 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 14:23:16 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 14:26:46 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 14:26:56 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 14:27:20 Warning: Warning (2): fopen(D:\xampp\htdocs\app\tmp\cache\models\cake_model_default_nextim_list) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Invalid argument in [CORE\cake\libs\file.php, line 156]
+2010-01-25 14:27:41 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 14:27:41 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\cake\basics.php:109) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-25 14:29:10 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 14:29:10 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\cake\basics.php:109) in [CORE\cake\libs\controller\controller.php, line 644]
+2010-01-25 14:47:34 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 14:49:27 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2010-01-25 14:50:47 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]

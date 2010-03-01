@@ -1,0 +1,7 @@
+set output_buffering = On in php.ini
+
+按照根目录下的 tablestruckt.sql 建立数据库，数据表的列名和结构有修改
+
+将此目录下所有文件放置在网站的发布目录即可，注意各级文件夹中的.htaccess是否拷贝下来，linux系统有时候会忽略.htaccess文件。
+
+apache 需要开启 url_rewrite 功能以支持cakePHP的url访问方式

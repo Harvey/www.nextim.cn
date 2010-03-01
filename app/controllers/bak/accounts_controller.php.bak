@@ -1,0 +1,349 @@
+﻿<?php
+define('StatusLogIn', 1);
+define('StatusLogOut', 0);
+define('Admin', 'admin');
+define('User', 'user');
+define('Supper', 'SupperAdmin');
+class AccountsController extends AppController {
+
+	var $name = 'Accounts';
+	var $helpers = array('Html', 'Form');
+	var $components = array('Acl', 'Auth');
+	
+	function beforeFilter(){
+		$this->Auth->userModel = 'Account';
+		$this->Auth->fields = array('username'=>'login', 'password'=>'hashed_password');
+		$this->Auth->allow('register');
+		//$this->Auth->LoginRedirect = array('controller' => 'accounts', 'action' => 'MyAccount');
+	}
+	
+	function CheckAcl($aroItem = null, $acoItem = null, $option = '*')
+	{
+		if(!$aroItem || !$acoItem )
+		{
+			return false;	
+		}
+
+		$aroPath = $this->Acl->Aro->node($aroItem);
+		$acoPath = $this->Acl->Aco->node($acoItem);
+
+		if ( empty($aroPath) || empty($acoPath) )
+		{
+			return false;	
+		}
+
+		/* check if the user group has this right */
+		$parent = $this->Acl->Aro->findByAlias($aroItem);
+		if( $this->Acl->check($parent['Aro']['model'], $acoItem, $option) )
+		{
+			return true;
+		}
+		
+		/* check if the user has this right */
+		if( $this->Acl->check($aroItem, $acoItem, $option) )
+		{
+			return true;
+		}
+		
+		return false;
+
+	}
+
+	function index() {
+		$this->Account->recursive = 0;
+		if( !$this->CheckAcl($this->Session->read('userid'), 'AccountsList', '*') )
+		{
+			$this->Session->setFlash(__('您没有访问的权限。', true));
+			$this->set('accounts', $this->paginate('Account', Array('id' => -1)));
+		}
+		else
+		{
+			$this->set('accounts', $this->paginate());
+		}
+		//$this->set('accounts', $this->paginate('Account', Array('id' => $this->Session->read('userid'))));
+	}
+	function MyAccount() {
+		$this->Account->recursive = 0;
+		$this->set('accounts', $this->paginate('Account', Array('id' => $this->Session->read('userid'))));
+	}
+	function PromoteAdministrator($id = null)
+	{
+		if(!$id)
+		{
+			$this->Session->setFlash(__('无效的用户。', true));
+		}
+		else if( !$this->CheckAcl($this->Session->read('userid'), 'ManageAccountRole', 'update') )
+		{
+			$this->Session->setFlash(__('您没有权限。', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		else
+		{
+			$results = $this->Account->findById($id);
+			if( !strcmp($results['Account']['role'], Admin) )
+			{
+				$this->Session->setFlash(__('该用户已经是管理员。', true));
+			}
+			else
+			{
+				if ( $this->Account->updateAll(array('Account.role' => "'" . Admin . "'"), array('Account.id' => $id)))
+				{
+					/* move to Admins */
+					
+					$parent = $this->Acl->Aro->findByAlias('Admins');
+					
+					$thisnode = $this->Acl->Aro->findByAlias($id);
+					$thisnode['Aro']['model'] = 'Admins';
+					$thisnode['Aro']['parent_id'] = $parent['Aro']['id'];
+					
+					$this->Acl->Aro->create($thisnode['Aro']);
+					$this->Acl->Aro->save();
+					
+					$this->Session->setFlash(__('操作成功。', true));
+					$this->redirect(array('action' => 'index'));
+				}
+			}
+		}
+	}
+	function DemoteAdministrator($id = null)
+	{
+		if(!$id)
+		{
+			$this->Session->setFlash(__('无效的用户。', true));
+		}
+		else if( !$this->CheckAcl($this->Session->read('userid'), 'ManageAccountRole', 'update') )
+		{
+			$this->Session->setFlash(__('您没有权限。', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		else
+		{
+			$results = $this->Account->findById($id);
+			if( strcmp($results['Account']['role'], Admin) )
+			{
+				$this->Session->setFlash(__('该用户不是管理员。', true));
+			}
+			else
+			{
+				if ( $this->Account->updateAll(array('Account.role' => "'" . User . "'"), array('Account.id' => $id)))
+				{
+					
+					/* move to Users */
+					
+					$parent = $this->Acl->Aro->findByAlias('Users');
+					
+					$thisnode = $this->Acl->Aro->findByAlias($id);
+					$thisnode['Aro']['model'] = 'Users';
+					$thisnode['Aro']['parent_id'] = $parent['Aro']['id'];
+					
+					$this->Acl->Aro->create($thisnode['Aro']);
+					$this->Acl->Aro->save();
+					
+					$this->Session->setFlash(__('操作成功。', true));
+					$this->redirect(array('action' => 'index'));
+				}
+			}
+		}
+	}
+	function view($id = null) {
+		if (!$id)
+		{
+			$this->Session->setFlash(__('无效的用户。', true));
+			$this->redirect(array('action' => 'MyAccount'));
+		}
+		else if( !$this->CheckAcl($this->Session->read('userid'), 'AccountsList', 'read') )
+		{
+			$this->Session->setFlash(__('您没有访问该用户的权限。', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		else
+		{
+			$this->set('account', $this->Account->read(null, $id));
+		}
+	}
+
+	function register() {
+		$RootRegister = false;
+		if (!empty($this->data)) {
+			/* test the password */
+			if($this->data['Account']['password'] == $this->Auth->password($this->data['Account']['ConfirmPassword'])){ 
+				$this->Account->invalidate('repeatpass');
+			}
+			else if(strlen($this->data['Account']['password']) < 6){ 
+				$this->Account->invalidate('password_too_short'); 
+			}
+			else
+			{
+				/* set the database item*/
+				$UserInfo = Array();
+				$UserInfo['Account']['login'] = $this->data['Account']['login'];
+				$UserInfo['Account']['hashed_password'] = $this->data['Account']['password'];
+				$UserInfo['Account']['status'] = StatusLogIn;
+				$UserInfo['Account']['nicename'] = $this->data['Account']['nicename'];
+				$UserInfo['Account']['created_at'] = date("Y-m-d	H:i:s");
+				$UserInfo['Account']['updated_at'] = date("Y-m-d	H:i:s");
+				$UserInfo['Account']['display_name'] = $this->data['Account']['nicename'];
+				if($RootRegister)
+				{
+					$UserInfo['Account']['role'] = Supper;
+				}
+				
+				$UserInfo = $this->Auth->hashPasswords($UserInfo);
+				//$this->Account->create();
+				if ($this->Account->save($UserInfo)) {
+					$this->Session->setFlash(__('账号注册成功。', true));
+					/* Get user id */
+					$results = $this->Account->findByLogin($this->data['Account']['login']);
+					/* create session */
+					//print_r($results);
+					$this->Session->write('userid', $results['Account']['id']);
+					if($RootRegister)
+					{
+						/* insert into aro(Suppers) */
+						$parent = $this->Acl->Aro->findByAlias('Suppers');
+						$this->Acl->Aro->create(
+						array(	'alias' => $results['Account']['id'],
+						'model' => 'Suppers',
+						'foreign_key' => $results['Account']['id'],
+						'parent_id' => $parent['Aro']['id']));
+						$this->Acl->Aro->save();
+					}
+					else
+					{
+						/* insert into aro(Users) */
+						$parent = $this->Acl->Aro->findByAlias('Users');
+						$this->Acl->Aro->create(
+						array(	'alias' => $results['Account']['id'],
+						'model' => 'Users',
+						'foreign_key' => $results['Account']['id'],
+						'parent_id' => $parent['Aro']['id']));
+						$this->Acl->Aro->save();	
+						
+						/* insert into aco(Accounts) */
+						$parent = $this->Acl->Aco->findByAlias('AccountsList');
+						$this->Acl->Aco->create(
+						array(	'alias' => $results['Account']['id'],
+						'model' => 'AccountsList',
+						'foreign_key' => $results['Account']['id'],
+						'parent_id' => $parent['Aco']['id']));
+						$this->Acl->Aco->save();
+						/* allow change myself */
+						$this->Acl->allow($this->Session->read('userid'), $results['Account']['id'], '*');
+					}
+					
+					/* goto home page */
+					$this->Auth->login($this->data);
+					//$this->redirect('/accounts/MyAccount');
+				} else {
+					$this->Session->setFlash(__('注册账户时发生错误，请重试。', true));
+				}
+			}
+		}
+	}
+	function login()
+	{/*
+		if ($this->data)
+		{
+			$results = $this->Account->findByLogin($this->data['Account']['login']);
+			if (!$results)
+			{
+				$this->Account->invalidate('username_unexist');
+			}
+			else if ($results['Account']['hashed_password'] != md5($this->data['Account']['password']))
+			{
+				$this->Account->invalidate('password_error');	
+			}
+			else
+			{
+				$this->Session->write('userid', $results['Account']['id']);
+				$this->Session->write('nicename', $results['Account']['nicename']);
+				$this->redirect('/');
+			}
+		}*/	
+		$this->Session->write('userid', $this->Auth->user('id'));
+	}
+
+	function logout()
+	{
+		$this->Session->del('userid');
+		$this->redirect($this->Auth->logout());
+		//$this->Session->setFlash(__('=,=!!', true));
+		//$this->redirect('/');
+	}
+
+	function edit($id = null) {
+		
+		if ( !$id && empty($this->data) )
+		{
+			$this->Session->setFlash(__('Invalid site', true));
+			$this->redirect(array('action' => 'MyAccount'));
+		}
+		/* test acl */
+		if( !$this->CheckAcl($this->Session->read('userid'), $id, 'update') )
+		{
+			$this->Session->setFlash(__('您没有修改该用户的权限。', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		else
+		{
+			if (!empty($this->data)) {
+				if(strlen($this->data['Account']['password']) < 6){ 
+					$this->Account->invalidate('password_too_short');
+				} 
+				else if(($this->data['Account']['password'] != $this->data['Account']['ConfirmPassword'])){ 
+					$this->Account->invalidate('repeatpass');
+				}
+				else
+				{
+					if ($this->Account->save($this->data)) {
+						$this->Session->setFlash(__('修改成功', true));
+						$this->redirect(array('action' => 'MyAccount'));
+					} else {
+						$this->Session->setFlash(__('修改账户时发生错误，请重试', true));
+					}
+				}
+			}
+			/* the first time get into this fun, we need read old infomation from database */
+			if (empty($this->data)) {
+				$this->data = $this->Account->read(Array('nicename','display_name'), $id);
+			}
+		}
+	}
+
+	function delete($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('无效的账号。', true));
+		}
+		else if( !$this->CheckAcl($this->Session->read('userid'), $id, 'delete') )
+		{
+			$this->Session->setFlash(__('您没有删除该用户的权限。', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		else if($this->Account->delete($id, true)) {
+			
+			if($id == $this->Session->read('userid'))
+			{
+				$this->Session->del('userid');	
+			}
+			
+			$aro = $this->Acl->Aro->findByAlias($id);
+			if( !empty($aro) )
+			{
+				$this->Acl->Aro->delete($aro['Aro']['id']);
+			}
+			
+			$aco = $this->Acl->Aco->findByAlias($id);
+			if( !empty($aco) )
+			{
+				$this->Acl->Aco->delete($aco['Aco']['id']);
+			}
+			
+			$this->Session->setFlash(__('删除成功。', true));
+		}
+		else {
+			$this->Session->setFlash(__('删除失败。', true));
+		}
+		$this->redirect(array('action' => 'MyAccount'));
+	}
+}
+?>

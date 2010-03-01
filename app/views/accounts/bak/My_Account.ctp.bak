@@ -1,0 +1,91 @@
+﻿<div class="accounts index">
+<h2><?php __('账户信息');?></h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<th><?php echo $paginator->sort('用户ID');?></th>
+<th><?php echo $paginator->sort('登录邮箱');?></th>
+<!--<th><?php echo $paginator->sort('hashed_password');?></th>-->
+<th><?php echo $paginator->sort('登录状态');?></th>
+<th><?php echo $paginator->sort('用户身份');?></th>
+<!--<th><?php echo $paginator->sort('nicename');?></th>-->
+<th><?php echo $paginator->sort('创建时间');?></th>
+<th><?php echo $paginator->sort('更新时间');?></th>
+<th><?php echo $paginator->sort('显示名称');?></th>
+<th class="actions"><?php __('账户操作');?></th>
+</tr>
+<?php
+$i = 0;
+foreach ($accounts as $account):
+$class = null;
+if ($i++ % 2 == 0) {
+	$class = 'class="altrow"';
+}
+?>
+<tr<?php echo $class;?>>
+<td>
+<?php echo $account['Account']['id']; ?>
+</td>
+<td>
+<?php echo $account['Account']['login']; ?>
+</td>
+<!--
+<td>
+<?php echo $account['Account']['hashed_password']; ?>
+</td>
+-->
+<td>
+<?php echo ($account['Account']['status'] == 1)?'已登录':'未登录'; ?>
+</td>
+<td>
+<?php echo ($account['Account']['role'] == 'user')?'用户':'管理员'; ?>
+</td>
+<!--
+<td>
+<?php echo $account['Account']['nicename']; ?>
+</td>
+-->
+<td>
+<?php echo $account['Account']['created_at']; ?>
+</td>
+<td>
+<?php echo $account['Account']['updated_at']; ?>
+</td>
+<td>
+<?php echo $account['Account']['display_name']; ?>
+</td>
+<td class="actions">
+<?php 
+if( strcmp($account['Account']['role'], 'admin') ) 
+{
+	//echo $html->link(__('赋予管理权', true), array('action' => 'PromoteAdministrator', $account['Account']['id']));
+}
+else
+{
+	//echo $html->link(__('撤销管理权', true), array('action' => 'DemoteAdministrator', $account['Account']['id']));						
+}
+?>
+<?php echo $html->link(__('查看', true), array('action' => 'view', $account['Account']['id'])); ?>
+<?php echo $html->link(__('编辑', true), array('action' => 'edit', $account['Account']['id'])); ?>
+<?php echo $html->link(__('删除', true), array('action' => 'delete', $account['Account']['id']), null, sprintf(__('确定删除 # %s 吗?', true), $account['Account']['id'])); ?>
+</td>
+</tr>
+<?php endforeach; ?>
+</table>
+</div>
+<div class="paging">
+<?php echo $paginator->prev('<< '.__('previous', true), array(), null, array('class'=>'disabled'));?>
+| 	<?php echo $paginator->numbers();?>
+<?php echo $paginator->next(__('next', true).' >>', array(), null, array('class' => 'disabled'));?>
+</div>
+<p>
+<?php
+echo $paginator->counter(array(
+'format' => __('第 %page% 页 / %pages% 页, 当前显示 %current% 项记录, 总记录 %count% 项', true)
+));
+?>
+</p>
+<div class="actions">
+<ul>
+<li><?php echo $html->link(sprintf(__('新建%s', true), __('账户', true)), array('action' => 'register')); ?></li>
+</ul>
+</div>

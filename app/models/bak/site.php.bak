@@ -1,0 +1,44 @@
+﻿<?php
+class Site extends AppModel {
+	var $name = 'Site';
+	var $validate = array(
+		'domain' => array(
+			'无效的URL地址' => 'url',
+		),
+		'name' => array(
+			'此字段不能为空' => 'notEmpty',
+		),
+		'description' => array(
+			'此字段不能为空' => 'notEmpty',
+		)
+	);
+	//The Associations below have been created with all possible keys, those that are not needed can be removed
+
+	var $belongsTo = array(
+		'Account' => array(
+			'className' => 'Account',
+			'foreignKey' => 'account_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+	
+	var $hasMany = array('Aco'	=> array(
+						'className' => 'Aco',
+						'foreignKey' => 'foreign_key',
+						'dependent'=> true)
+	);
+	
+	function beforeValidate(){ 
+		if(!$this->id){
+			$result = $this->find('all', array('conditions' => Array('domain' => $this->data['Site']['domain'])));
+			if(count($result) > 0){
+				$this->invalidate('sitename_unique'); 
+				return false;
+			} 
+			return true; 
+		} 
+	}
+}
+?>

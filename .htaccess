@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>   
+    RewriteEngine On   
+    RewriteBase /   
+    RewriteCond %{REQUEST_URI} ^/downloads/(.*)$   
+    RewriteRule ^.*$ - [L]   
+</IfModule>
+
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteBase /
+   RewriteRule    ^$ app/webroot/    [L]
+   RewriteRule    (.*) app/webroot/$1 [L]
+</IfModule>
